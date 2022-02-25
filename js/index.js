@@ -30,6 +30,15 @@ class Tile {
   setStyling() {
     this.htmlRef.style.background = this.color;
   }
+
+  playButton() {
+    this.setBody();
+    this.htmlRef.style.height = "130px";
+    setTimeout(() => {
+      this.htmlRef.style.height = "100px";
+    }, 5000);
+  }
+
   setBody() {
     this.holder.style.backgroundColor = this.color;
   }
@@ -65,6 +74,6 @@ play.onclick = (event) => {
     } else {
       teller++;
     }
-    allTiles[teller].setBody();
+    allTiles[teller].playButton();
   }, 5000);
 };
